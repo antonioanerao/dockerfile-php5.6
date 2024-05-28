@@ -16,9 +16,12 @@ services:
     networks:
       - proxy
 
-  webserver:
-    container_name: webserver
-    image: php5.6
+  php56:
+    container_name: php56
+    image: php56
+    build:
+      dockerfile: ./Dockerfile
+      context: .
     restart: always
     networks:
       - proxy
